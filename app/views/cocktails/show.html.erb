@@ -1,0 +1,8 @@
+<h1>This will be the show page for each cocktail</h1>
+
+
+<h2><%= @cocktail.name %></h2>
+<h3><% @cocktail.doses.each do |dose| %></h3>
+<h3><%= dose.description %></h3>
+<h3><%= dose.ingredient.name %></h3>
+<% end %>
