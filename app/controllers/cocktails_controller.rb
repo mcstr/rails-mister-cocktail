@@ -1,5 +1,6 @@
 class CocktailsController < ApplicationController
   before_action :set_cocktail, only: [:show, :edit, :update]
+
   def home
     @cocktails = Cocktail.all
   end
@@ -9,6 +10,8 @@ class CocktailsController < ApplicationController
   end
 
   def show
+    @dose = Dose.new
+
   end
 
   def new
@@ -46,3 +49,4 @@ class CocktailsController < ApplicationController
     params.require(:cocktail).permit(:name)
   end
 end
+

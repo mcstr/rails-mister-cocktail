@@ -1,8 +1,16 @@
 <h1>This will be the show page for each cocktail</h1>
 
 
-<h2><%= @cocktail.name %></h2>
+
+<h1><%= @cocktail.name %></h1>
 <h3><% @cocktail.doses.each do |dose| %></h3>
 <h3><%= dose.description %></h3>
 <h3><%= dose.ingredient.name %></h3>
+<h2><%= link_to 'Delete Dose', dose_path(dose), method: :delete %></h2>
 <% end %>
+
+<%= link_to 'Edit the cocktail', edit_cocktail_path(@cocktail) %>
+
+<%= link_to 'Back to all cocktails', root_path %>
+
+<%= render "doses/new", cocktail: @cocktail, dose: @dose %>

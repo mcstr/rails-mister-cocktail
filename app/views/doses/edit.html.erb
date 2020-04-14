@@ -1,0 +1,8 @@
+<h1>here the dose edit</h1>
+
+<h3>Edit dose</h3>
+<%= simple_form_for [dose] do |f| %>
+  <%= f.input :description %>
+  <%= f.association :ingredient, input_html: { class: "beautiful-dropdown" }, include_hidden: false %>
+  <%= f.submit "Add a dose", class: "btn btn-primary" %>
+<% end %>
