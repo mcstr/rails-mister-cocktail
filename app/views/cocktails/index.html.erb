@@ -1,6 +1,7 @@
 <h1>here will be the index with all the cocktails and a search field</h1>
 <ul>
   <% @cocktails.each do |cocktail| %>
+  <%= cl_image_tag cocktail.photo.key, height: 300, width: 400, crop: :fill%>
   <li> <%= cocktail.name %></li>
   <% end %>
 </ul>

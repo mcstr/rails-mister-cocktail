@@ -1,6 +1,8 @@
 
-<h1>Rock and Roll Cocktails</h1>
+<h1>The Hungover</h1>
 <% @cocktails.each do |cocktail|%>
+  <%= cl_image_tag cocktail.photo.key, height: 300, width: 400, crop: :fill%>
+
 <h3><%= link_to(cocktail.name, cocktail_path(cocktail)) %></h3>
 <% end %>
 <%= link_to 'Create a new Cocktail', new_cocktail_path %>
