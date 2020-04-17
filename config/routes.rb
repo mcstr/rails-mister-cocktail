@@ -3,7 +3,11 @@ Rails.application.routes.draw do
 root to: 'cocktails#home'
 
 resources :cocktails, only: [:index, :new, :create, :show,:update, :edit] do
-  resources :doses, only: [:create]
+  resources :doses, only: [:new, :create]
+  resources :reviews, only: [:create]
 end
-resources :doses, only: [:destroy]
+
+resources :doses, only: [:destroy, :edit, :update]
+resources :reviews, only: [:destroy]
+
 end

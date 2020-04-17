@@ -1,9 +1,18 @@
 
 <h1>The Hungover</h1>
-<% @cocktails.each do |cocktail|%>
+
+
+<%= simple_form_for :search, url: root_path, method:'GET', html:{
+  class: 'form-inline'} do |f|%>
+  <%= f.input :name, label: false, input_html: {value: ""}%>
+  <%= f.submit "Search", class: "btn btn-primary" %>
+<% end %>
+
+<% @cocktails.sample(3).each do |cocktail|%>
   <%= cl_image_tag cocktail.photo.key, height: 300, width: 400, crop: :fill%>
 
 <h3><%= link_to(cocktail.name, cocktail_path(cocktail)) %></h3>
 <% end %>
-<%= link_to 'Create a new Cocktail', new_cocktail_path %>
+<%= link_to 'Create a new Cocktail',new_cocktail_path %>
+<%= link_to 'Go to index page', cocktails_path %>
 
