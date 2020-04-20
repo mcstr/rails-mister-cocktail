@@ -10,7 +10,7 @@ class DosesController < ApplicationController
   end
 
   def edit
-       @dose = Dose.find(params[:id])
+
   end
 
   def update
